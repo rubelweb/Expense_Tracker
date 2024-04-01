@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import './App.css'
 import ExpenseForm from './components/ExpenseForm/ExpenseForm'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
     const [expenses, setExpenses] = useState([])
