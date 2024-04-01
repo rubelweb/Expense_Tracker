@@ -1,6 +1,7 @@
 import './App.css'
 import ExpenseForm from './components/ExpenseForm/ExpenseForm'
 import { useState, useEffect } from 'react'
+import ExpenseList from './components/ExpenseList/ExpenseList'
 
 function App() {
     const [expenses, setExpenses] = useState([])
@@ -14,7 +15,6 @@ function App() {
     const addExpense = (expense) => {
         setExpenses([...expenses, expense])
     }
-
     console.log(JSON.stringify(expenses))
 
     return (
@@ -22,6 +22,7 @@ function App() {
             <div>
                 <h1>Expense Tracker</h1>
                 <ExpenseForm onAddExpense={addExpense} />
+                <ExpenseList expenses={expenses} />
                 <h2>Total Expense: {totalExpense}</h2>
             </div>
         </>

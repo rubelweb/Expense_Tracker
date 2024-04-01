@@ -11,8 +11,8 @@ function ExpenseForm({ onAddExpense }) {
 
         const newExpense = {
             id: nextId,
-            amount: parseFloat(amount),
             description,
+            amount: parseFloat(amount),
             date: new Date().toDateString()
         }
 
