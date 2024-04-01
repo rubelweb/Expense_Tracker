@@ -1,22 +1,27 @@
 import PropTypes from 'prop-types'
 import ExpenseItem from '../ExpenseItem/ExpenseItem'
 
-function ExpenseList({ expenses }) {
+function ExpenseList({ expenses, onDeleteExpense }) {
     return (
         <div>
-            <h2>Expenses</h2>
+            <h3>Expenses:</h3>
 
-            <ul>
+            <div>
                 {expenses.map((expense) => (
-                    <ExpenseItem key={expense.id} expense={expense} />
+                    <ExpenseItem
+                        key={expense.id}
+                        expense={expense}
+                        onDelete={onDeleteExpense}
+                    />
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }
 
 ExpenseList.propTypes = {
-    expenses: PropTypes.array.isRequired
+    expenses: PropTypes.array.isRequired,
+    onDeleteExpense: PropTypes.func.isRequired
 }
 
 export default ExpenseList

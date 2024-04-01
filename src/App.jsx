@@ -15,14 +15,20 @@ function App() {
     const addExpense = (expense) => {
         setExpenses([...expenses, expense])
     }
-    console.log(JSON.stringify(expenses))
+
+    const onDeleteExpense = (id) => {
+        setExpenses(expenses.filter((expense) => expense.id !== id))
+    }
 
     return (
         <>
             <div>
                 <h1>Expense Tracker</h1>
                 <ExpenseForm onAddExpense={addExpense} />
-                <ExpenseList expenses={expenses} />
+                <ExpenseList
+                    expenses={expenses}
+                    onDeleteExpense={onDeleteExpense}
+                />
                 <h2>Total Expense: {totalExpense}</h2>
             </div>
         </>
